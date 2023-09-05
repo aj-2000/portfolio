@@ -7,7 +7,8 @@
                     "rounded-3xl",
                     "bg-grey-200 bg-opacity-30 backdrop-blur-2xl",
                     "h-20 max-w-[95%] px-3 py-2",
-                    "flex items-center justify-start gap-4"
+                    "flex items-center justify-start gap-4",
+                    "overflow-scroll"
                 ),
         item: twJoin("drop-shadow-xl")
 
