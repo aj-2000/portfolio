@@ -8,7 +8,7 @@
         <StatusBar/>
     </div>
 
-    <div class="absolute pt-[32px] top-0 left-0 w-full h-full bg-gray-100 z-0 bg-cover bg-[url(images/bg.jpg)] bg-center">
+    <div class="absolute pt-[32px] top-0 left-0 w-full h-full bg-gray-100 z-0 bg-cover bg-[url(https://github.com/aj-2000/portfolio/blob/main/static/images/bg.jpg?raw=true)] bg-center">
         
 
     </div>
