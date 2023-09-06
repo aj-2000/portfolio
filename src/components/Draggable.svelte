@@ -4,7 +4,11 @@
 	
 	let moving = false;
 	
-	function onMouseDown() {
+	function onMouseDown(e) {
+        console.log(e)
+        if(e.layerX <= 10 || e.layerY <= 10) {
+            return;
+        }
 		moving = true;
 	}
 	

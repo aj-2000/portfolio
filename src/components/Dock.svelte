@@ -18,8 +18,12 @@
 
 
     }
+
     export let isTerminalHidden;
     export let onTerminalIconClick;
+
+    export let isBrowserHidden;
+    export let onBrowserIconClick;
 
 </script>
 
@@ -31,7 +35,6 @@
     <div on:click={onTerminalIconClick} class={dockStyles.item}>
         <Icon icon="logos:terminal" width="50" height="50" />
         <Icon class={`text-gray-300 ${isTerminalHidden && "invisible"}`} icon="radix-icons:dot-filled" width="10" height="10"/>
-
     </div>
 
     <div class={dockStyles.item}>
@@ -46,7 +49,8 @@
         <Icon icon="logos:visual-studio-code" width="50" height="50" /> 
     </div>
 
-    <div class={dockStyles.item}>
-        <Icon icon="logos:chrome" width="50" height="50" />
+    <div on:click={onBrowserIconClick} class={dockStyles.item}>
+        <Icon  icon="logos:chrome" width="50" height="50" />
+        <Icon class={`text-gray-300 ${isBrowserHidden && "invisible"}`} icon="radix-icons:dot-filled" width="10" height="10"/>
     </div>
 </div>
