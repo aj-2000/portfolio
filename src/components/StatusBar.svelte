@@ -3,6 +3,8 @@
    import { onMount, onDestroy } from "svelte";
    import Icon from '@iconify/svelte';
 
+   // export let isTerminalHidden = true;
+
    const styles = {
        statusBar: {
            container : twJoin(
@@ -16,6 +18,7 @@
        }
    }
     console.log(styles)
+
 
     let currentDateTime = new Date();
     let clockInterval = undefined;

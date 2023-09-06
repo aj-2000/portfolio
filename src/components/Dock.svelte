@@ -14,6 +14,8 @@
 
 
     }
+    export let onTerminalIconClick;
+
 </script>
 
 <div class={dockStyles.container}>
@@ -21,7 +23,7 @@
          <Icon icon="logos:spotify-icon" width="50" height="50" />
     </div>
 
-    <div class={dockStyles.item}>
+    <div on:click={onTerminalIconClick} class={dockStyles.item}>
        <Icon icon="logos:terminal" width="50" height="50" />
     </div>
 

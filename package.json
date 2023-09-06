@@ -17,6 +17,7 @@
 		"postcss": "^8.4.29",
 		"svelte": "^4.0.5",
 		"svelte-check": "^3.4.3",
+		"svelte-motion": "^0.11.5",
 		"tailwindcss": "^3.3.3",
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",
@@ -25,6 +26,7 @@
 	"type": "module",
 	"dependencies": {
 		"@sveltejs/adapter-vercel": "^3.0.3",
+		"svelte-moveable": "^0.43.1",
 		"tailwind-merge": "^1.14.0"
 	}
 }
