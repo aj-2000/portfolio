@@ -1,6 +1,7 @@
 <script lang="ts">
     import { twJoin } from "tailwind-merge";
-    import Icon from '@iconify/svelte'; 
+    import Icon from "@iconify/svelte"; 
+    import { URLS } from "$lib";
     const dockStyles = {
         container : twJoin("absolute bottom-2 left-[50%] -translate-x-[50%] z-50",
                     "border-[0.5px] border-gray-600",
@@ -25,9 +26,17 @@
     export let isBrowserHidden;
     export let onBrowserIconClick;
 
+    export let isProfileHidden;
+    export let onProfileIconClick;
+
 </script>
 
 <div class={dockStyles.container}>
+     <div class={dockStyles.item}>
+        <img on:click={onProfileIconClick} class="rounded-full" src={URLS.profileImage} width="50" height="50" />
+        <Icon class={`text-gray-300 ${isProfileHidden && "invisible"}`} icon="radix-icons:dot-filled" width="10" height="10"/>
+    </div>
+
     <div class={dockStyles.item}>
          <Icon icon="logos:spotify-icon" width="50" height="50" />
     </div>
