@@ -6,14 +6,19 @@
                     "border-[0.5px] border-gray-600",
                     "rounded-3xl",
                     "bg-grey-200 bg-opacity-30 backdrop-blur-2xl",
-                    "h-20 max-w-[95%] px-3 py-2",
+                    "h-20 max-w-[95%] px-3 pt-2",
                     "flex items-center justify-start gap-4",
                     "overflow-scroll"
                 ),
-        item: twJoin("drop-shadow-xl")
+        item: twJoin(
+            "drop-shadow-xl",
+            "flex flex-col justify-center items-center"
+                    
+        )
 
 
     }
+    export let isTerminalHidden;
     export let onTerminalIconClick;
 
 </script>
@@ -24,7 +29,9 @@
     </div>
 
     <div on:click={onTerminalIconClick} class={dockStyles.item}>
-       <Icon icon="logos:terminal" width="50" height="50" />
+        <Icon icon="logos:terminal" width="50" height="50" />
+        <Icon class={`text-gray-300 ${isTerminalHidden && "invisible"}`} icon="radix-icons:dot-filled" width="10" height="10"/>
+
     </div>
 
     <div class={dockStyles.item}>
