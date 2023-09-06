@@ -18,5 +18,5 @@
 </script>
 
 <AppWindow title="Browser" {isHidden} {onClose} onToggle={onToggleMod}>
-  <iframe title="Browser" class="w-full h-full p-1" src={url} />
+  <iframe title="Browser" class="w-full h-full" src={url} />
 </AppWindow>

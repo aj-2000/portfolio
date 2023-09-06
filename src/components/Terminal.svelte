@@ -4,24 +4,23 @@
   import CommandBar from "./CommandBar.svelte";
   import NotFound from "./commands/NotFound.svelte";
   import Welcome from "./commands/Welcome.svelte";
+  import About from "./commands/About.svelte";
+  import History from "./commands/History.svelte";
 
   interface ICommandOutput {
     commandName: string;
   }
 
   let element;
-  let commandOutputselement;
   let commandOutputs: ICommandOutput[] = [{ commandName: "welcome" }];
   let text = "welcome";
 
   // Either afterUpdate()
   afterUpdate(() => {
-    console.log("afterUpdate");
     if (commandOutputs) scrollToBottom(element);
   });
 
   $: if (commandOutputs && element) {
-    console.log("tick");
     scrollToBottom(element);
   }
 
@@ -50,7 +49,11 @@
   <div bind:this={element} class="w-full h-full overflow-scroll">
     {#each commandOutputs as { commandName }}
       {#if commandName === "welcome"}
-        <Welcome />
+        <Welcome {commandName} />
+      {:else if commandName === "about"}
+        <About {commandName} />
+      {:else if commandName === "history"}
+        <History {commandName} commandOutputs={[...commandOutputs]} />
       {:else}
         <NotFound {commandName} />
       {/if}

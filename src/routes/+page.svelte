@@ -4,10 +4,12 @@
   import Terminal from "../components/Terminal.svelte";
   import Browser from "../components/Browser.svelte";
   import Profile from "../components/Profile.svelte";
+  import MeetApp from "../components/MeetApp.svelte";
 
   let isTerminalHidden = true;
   let isBrowserHidden = true;
-  let isProfileHidden = false;
+  let isProfileHidden = true;
+  let isMeetAppHidden = true;
 
   function onProfileIconClick() {
     isProfileHidden = !isProfileHidden;
@@ -15,6 +17,11 @@
 
   function onBrowserIconClick() {
     isBrowserHidden = !isBrowserHidden;
+  }
+
+  function onMeetAppIconClick() {
+    console.log("onMeetAppIconClick");
+    isMeetAppHidden = !isMeetAppHidden;
   }
 
   function onTerminalIconClick() {
@@ -33,6 +40,7 @@
     <Terminal isHidden={isTerminalHidden} onToggle={onTerminalIconClick} />
     <Browser isHidden={isBrowserHidden} onToggle={onBrowserIconClick} />
     <Profile isHidden={isProfileHidden} onToggle={onProfileIconClick} />
+    <MeetApp isHidden={isMeetAppHidden} onToggle={onMeetAppIconClick} />
   </div>
   <Dock
     {isTerminalHidden}
@@ -41,5 +49,7 @@
     {onBrowserIconClick}
     {isProfileHidden}
     {onProfileIconClick}
+    {isMeetAppHidden}
+    {onMeetAppIconClick}
   />
 </main>
